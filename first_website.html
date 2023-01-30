@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!-- This above line tells the browser that this is an HTML5 document. -->
+
+<!-- The html tag below allows the content inside it to inherit useful properties. -->
+<html>
+
+    <head>
+
+        <!-- UTF-8 is the character encoding used in most websites nowadays. -->
+        <meta charset="utf-8">
+
+        <!-- The viewport tag should be on all websites, and allows the 
+            webpage to format correctly on most devices, including desktops, 
+            tablets, phones, and other mobile devices. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- The Title will appear in the tab on the tab bar at the top of the window (at least when using Chrome). -->
+        <title> A Website </title>
+
+    </head>
+
+    <body>
+
+        <!-- The following h# tags are a bit unnecessary when working with CSS, as they were an early method of HTML styling. 
+            The h1-3 tags are usually used for titles, subtitles and subsection section headers, respectively. It's fairly
+            rare to see someone using h4-6 nowadays.  -->
+
+        <h1> Just a Simple Website </h1>
+
+        <h2> It's so easy even a monkey could do it. </h2>
+
+        <h3> Ooh ooh ahh ahh. </h3>
+
+        <h4> Just kidding. I promise I'm a human whose intellectual capacity far surpasses that of other primate species. </h4>
+
+        <h5> Or am I? </h5>
+
+        <h6> I will concede that I am easily bribed with nuts, seeds, and fruits as a reward for completing mundane tasks. </h6>
+
+        <!-- Style tags such as <em> and <b> are used to place emphasis on and embolden wording, respectively. Standalone tags such as
+            <br>, which inserts a page break, or <hr>, which displays a horizontal rule, do not enclose anything and are referred to as 'void elements'. -->
+        <p> Maybe I'm <em>not</em> so different than my chimpanzee brethren after all. <br> <hr> I mean, just <b>look</b> at this little guy. </p>
+
+        <!-- The img tag allows us to insert an image onto the page, 
+            and the source attribute can take either a file path or 
+            a URL (although not recommended) from which to reference 
+            the image. We can use the border attribute to frame the
+            image inside a border of a specified pixel width -->
+        <img src="file:///Users/will/Desktop/website/monkey.jpeg" border="10">
+
+        <!-- We may use the style attribute to further customize the content of our webpage. -->
+        <p style="font-size:x-small">He just like me fr.</p>
+        
+
+        <p>What more could you want in a fella? He's</p>
+
+        <!-- We can use our handy dandy <ul> and <ol> elements to make unordered and ordered lists. -->
+        <ol>
+
+            <!-- Inserting an element inside another is called nesting (like russian dolls), where 
+                inner elements are called child elements and outer ones are parent elements.-->
+            <li>Put together 
+                <ul>
+                    <li>stylish</li>
+                    <li>poised</li>
+                    <li>professional</li>
+                </ul>
+            </li>
+
+            <li>An intellectual 
+                <ul>
+                    <li>computer skills</li>
+                    <li>gamer</li>
+                    <li>can probably write nested lists in HTML</li>
+                </ul>
+            </li>
+
+            <li>Well groomed
+                <ul>
+                    <li>short combed hair</li>
+                    <li>probably smells like fresh oranges</li>
+                    <li>no mites</li>
+                </ul>
+            </li>
+
+        </ol>
+
+        <br>
+
+        <!-- We can use a <table> tag to organize wacky data and put it into table rows using <tr>, under column
+            headers using <th>, representing the table's data entries with <td>. -->
+        
+        <p> The handsome boy in the picture is a chimpanzee. Let's look at what his full name is:</p>
+
+        <!-- We can style our table to have outer and inner borders by using the border attribute and specifying
+            pixel width. We can also implement custom size inside and spacing in between cells using the
+            cellpadding and cellspacing atributes, respectively. One last thing that we can do is make one table
+            cell span across multiple columns or rows using the colspan and rowspan attributes inside of a <th> or <td> tag. -->
+
+        <table border="10" cellpadding="12" cellspacing="10">
+            <tr>
+                <th rowspan="2">Our Monkey Friend's Name</th>
+                <th>Kingdom</th>
+                <th>Phylum</th>
+                <th>Class</th>
+                <th>Order</th>
+                <th>Suborder</th>
+                <th>Infraorder</th>
+                <th>Family</th>
+                <th>Subfamily</th>
+                <th>Tribe</th>
+                <th>Genus</th>
+                <th colspan="2">Species/Subspecies</th>
+            </tr>
+
+            <tr>
+                <td>Animalia</td>
+                <td>Chordata</td>
+                <td>Mammalia</td>
+                <td>Primates</td>
+                <td>Haplorhini</td>
+                <td>Simiiformes</td>
+                <td>Hominidae</td>
+                <td>Homininae</td>
+                <td>Hominini</td>
+                <td>Pan</td>
+                <td>Troglodytes</td>
+                <td>Ellioti</td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <!-- The <a> tag allows us to hyperlink text. It stands for 'anchor', since it anchors this website to the one it 
+            is linking to. It's most important attribute is the hypertext reference (href), its value containing the link 
+            itself. The target attribute can be used to control where the link is opened, in this case a new tab since it 
+            is set to "_blank". -->
+        <a href="https://www.youtube.com/watch?v=atQOxz9a1zo" target="_blank"> Click here to see some other funky monkeys monkeying around!</a>
+
+    </body>
+
+</html>
