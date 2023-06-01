@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Orders access through API</title>
+        <script>
+            function getOrdersFromAPI() {
+
+                var xhttp = new XMLHttpRequest();
+                let customer = document.getElementById("customer-name").value;
+                
+                xhttp.open("GET", "http://localhost:8000/orders/bycustomer?customer=" + customer, true);
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let resp = JSON.parse(this.responseText);
+
+                        let orderList = document.getElementById("order-list");
+
+                        for (i=0; i<resp.data.length; i++) {
+                            let newOrder=document.createElement("li");
+                            newOrder.innerHTML= resp.data[i].OrderID;
+                	          orderList.appendChild(newOrder);
+                        }
+                    }
+                };
+
+                xhttp.send();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Get Orders by Customer API</h1>
+
+        <input type="button" onclick="getOrdersFromAPI()"
+          value="Get Orders">
+
+        <p>Customer: <input type="text" id="customer-name"><br>
+        Order List:
+          <ul id="order-list">
+          </ul>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>First Call to our API</title>
+        <script>
+            function sampleRequest() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", "http://localhost:8000/sample", true);
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let resp = JSON.parse(this.responseText);
+
+                        let msg = document.getElementById("message");
+                        msg.innerHTML = resp.message;
+                        let sem = document.getElementById("semester");
+                        sem.innerHTML = resp.semester;
+                        let c1 = document.getElementById("course0");
+                        c1.innerHTML = resp.classList[0].class + " ("
+                          + resp.classList[0].time + ") Taught by " + resp.classList[0].instructor;
+                        let c2 = document.getElementById("course1");
+                        c2.innerHTML = resp.classList[1].class + " ("
+                          + resp.classList[1].time + ") Taught by " + resp.classList[0].instructor;
+                    }
+                };
+
+                xhttp.send();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Sample API Call</h1>
+
+        <input type="button" onclick="sampleRequest()"
+          value="Make Request to /sample Endpoint">
+
+        <p>Message: <span id="message"></span><br>
+        Semester: <span id="semester"></span><br>
+        Courses:
+        <ul>
+          <li><span id="course0"></span></li>
+          <li><span id="course1"></span></li>
+        </ul>
+    </body>
+</html>

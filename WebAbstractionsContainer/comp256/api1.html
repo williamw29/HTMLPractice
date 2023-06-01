@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <script>
+
+            function getWeather() {
+
+                let zip = document.getElementById("ZIP").value;
+
+                if (document.getElementById("ZIP").value == ""){
+                    zip = "17013";
+                }
+
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q="+ zip + ",us&appid=71600e803223b59828cade9d4fc4d46b&units=metric", true);
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let resp = JSON.parse(this.responseText);
+
+                        let temp = document.getElementById("temp");
+                        temp.innerHTML = resp.main.temp;
+
+                        let wind = document.getElementById("wind");
+                        wind.innerHTML = resp.wind.speed;
+
+                        let imgURL = "http://openweathermap.org/img/wn/" + resp.weather[0].icon + "@4x.png";
+
+                        let imgIcon = document.getElementById("icon");
+                        imgIcon.src = imgURL;
+                    }
+                };
+
+                xhttp.send();
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Weather App</h1>
+        <ul>
+            <img src="" id="icon">
+            <li>Temperature: <span id="temp">Unknown</span> Celsius</li>
+            <li>Wind Speed: <span id="wind">Unknown</span> m/s</li>
+        </ul>
+        <input type="text" id="ZIP">
+        <input type="button" onclick="getWeather()" value="Get the Weather">
+        
+    </body>
+</html>
+

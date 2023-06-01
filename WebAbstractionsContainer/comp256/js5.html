@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript Test Page</title>
+        
+        <script>
+            function addFood() {
+                let food=document.getElementById("food").value;
+                
+                let newFood=document.createElement("li");
+                newFood.innerHTML=food;
+                
+                let list=document.getElementById("foodlist");
+                list.appendChild(newFood);
+            }
+
+            function removeFood() {
+                let list=document.getElementById("foodlist");
+                list.removeChild(list.lastChild);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Foods</h1>
+        
+        <ul id="foodlist">
+          <li>Spaghetti</li>
+        </ul>
+        
+        <p>Food: <input type="text" id="food">
+        <input type="button" onclick="addFood()" value="Add">
+        <input type="button" onclick="removeFood()" value="Remove">
+        </p>
+    </body>
+</html>

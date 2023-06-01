@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript Test Page</title>
+        
+        <script>
+            function hello() {
+                alert("Hello I'm JavaScript!");
+            }
+
+            function goodbye() {
+                let name=document.getElementById("name").value;
+                alert("Goodbye " + name + "!");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        
+        <p>Click the button to say hello!</p>
+        
+        <input type="button" value="Say Hello" onclick="hello()">
+
+        <h2>Goodbye</h2>
+        
+        <p>Click the button to say goodbye!</p>
+        
+        <p>Name: <input type="text" id="name" value=""></p>        
+        <input type="button" value="Say Hello" onclick="goodbye()">
+    </body>
+</html>

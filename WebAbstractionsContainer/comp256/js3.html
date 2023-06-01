@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"> 
+
+        <title>JavaScript Test Page</title>
+        
+        <style>
+            .invisible {display: none;}
+        </style>
+
+        <script>
+
+            function sunny() {
+                let sunny=document.getElementById("weather");
+                sunny.src="https://openclipart.org/image/400px/18891";
+
+                let sunnyButton=document.getElementById("sunny button");
+                let rainyButton=document.getElementById("rainy button");
+                sunnyButton.classList.add("invisible");
+                rainyButton.classList.remove("invisible");
+            }
+
+            function rainy() {
+                let rainy=document.getElementById("weather");
+                rainy.src="https://openclipart.org/image/400px/18894";
+
+                let sunnyButton=document.getElementById("sunny button");
+                let rainyButton=document.getElementById("rainy button");
+                sunnyButton.classList.remove("invisible");
+                rainyButton.classList.add("invisible");
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Weather</h1>
+        
+        <p><img src="https://openclipart.org/image/400px/18894"
+                id="weather" width=200></p>
+        <br>
+        <input type="button" id="sunny button" value="Make it Sunny!" onclick="sunny()">
+        <input type="button" id="rainy button" class="invisible" value="Make it Rainy!" onclick="rainy()">
+    </body>
+</html>

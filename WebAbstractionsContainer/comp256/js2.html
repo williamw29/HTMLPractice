@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript Test Page</title>
+        
+        <script>
+            function hello() {
+                let prefix=document.getElementById("prefix").value;
+                let firstname=document.getElementById("firstname").value;
+                let lastname=document.getElementById("lastname").value;
+                alert("Hello " + prefix + " " + firstname + " " + lastname + ", I'm JavaScript!");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        
+        <label for="prefix">Prefix:</label>
+
+        <select name="prefix" id="prefix">
+            <option value="Dr.">Dr.</option>
+            <option value="Prof.">Prof.</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Miss.">Miss.</option>
+        </select>
+
+        <p>First name: <input type="text" id="firstname" value=""></p>
+        <p>Last name: <input type="text" id="lastname" value=""></p>        
+        <input type="button" value="Say Hello" onclick="hello()">
+    </body>
+</html>
